@@ -21,21 +21,21 @@ function apiRoutes(app) {
         for (let i = 0; i < req.body.scores.length; i++) {
             scoresArray.push(parseInt(req.body.scores[i]))
         }
-        // newFriend.scores = scoresArray;
+        newFriend.scores = scoresArray;
 
-        // // Cross check the new friend entry with the existing ones
-        // var scoreComparisionArray = [];
-        // for (var i = 0; i < friendsData.length; i++) {
+        // Cross check the new friend entry with the existing ones
+        var scoreComparisionArray = [];
+        for (var i = 0; i < friendsData.length; i++) {
 
-        //     // Check each friend's scores and sum difference in points
-        //     var currentComparison = 0;
-        //     for (var j = 0; j < newFriend.scores.length; j++) {
-        //         currentComparison += Math.abs(newFriend.scores[j] - friendsData[i].scores[j]);
-        //     }
+            // Check each friend's scores and sum difference in points
+            var currentComparison = 0;
+            for (var j = 0; j < newFriend.scores.length; j++) {
+                currentComparison += Math.abs(newFriend.scores[j] - friendsData[i].scores[j]);
+            }
 
-        //     // Push each comparison between friends to array
-        //     scoreComparisionArray.push(currentComparison);
-        // }
+            // Push each comparison between friends to array
+            scoreComparisionArray.push(currentComparison);
+        }
     })
 }
 
